@@ -50,7 +50,50 @@
             </div>
         </section>
 
-        <!-- COLUMN 2: Chat -->
+        <!-- COLUMN 2: Resources & Files -->
+        <aside class="lg:col-span-1 space-y-6">
+            <div class="flex items-center gap-2 mb-4 border-b border-gray-800 pb-2">
+                <span class="text-xl">🧠</span> 
+                <h2 class="text-lg font-bold text-purple-400 uppercase tracking-wider">Intelligence & Files</h2>
+            </div>
+
+            <!-- Notebooks Widget -->
+            <div class="glass-card p-6">
+                <h3 class="text-sm font-bold text-slate-400 mb-4 uppercase tracking-widest border-b border-slate-700/50 pb-2">Notebooks</h3>
+                <div class="space-y-3">
+                    <!-- Notebook 1 -->
+                    <a href="https://notebooklm.google.com/notebook/529b5005-d623-470a-83b8-b941185fafe4" target="_blank" 
+                       class="group block p-3 rounded-xl bg-slate-800/50 border border-slate-700 hover:border-cyan-500 hover:bg-slate-800 transition-all">
+                        <div class="flex justify-between items-center mb-1">
+                            <span class="font-bold text-cyan-400 group-hover:text-white transition-colors text-sm">Anthropic's AI Approach</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-slate-500 group-hover:text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                            </svg>
+                        </div>
+                        <span class="text-[10px] text-slate-500">Constitutional AI & Safety</span>
+                    </a>
+
+                    <!-- Notebook 2 -->
+                    <a href="#" class="group block p-3 rounded-xl bg-slate-800/50 border border-slate-700 hover:border-purple-500 hover:bg-slate-800 transition-all opacity-75">
+                        <div class="flex justify-between items-center mb-1">
+                            <span class="font-bold text-purple-400 group-hover:text-white transition-colors text-sm">Gemini Architecture</span>
+                            <span class="text-[9px] bg-slate-900 text-slate-400 px-1.5 py-0.5 rounded border border-slate-700">Soon</span>
+                        </div>
+                        <span class="text-[10px] text-slate-500">Multimodal capabilities</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- New: Shared Files Widget -->
+            <div class="glass-card p-6">
+                <h3 class="text-sm font-bold text-slate-400 mb-4 uppercase tracking-widest border-b border-slate-700/50 pb-2">Shared Files</h3>
+                <ul id="file-list" class="space-y-3">
+                    <!-- Files injected via script.js -->
+                </ul>
+            </div>
+        </aside>
+
+        <!-- COLUMN 3: Chat -->
         <section class="lg:col-span-1 space-y-6">
             <div class="flex items-center gap-2 mb-4 border-b border-gray-800 pb-2">
                 <span class="text-xl">💬</span> 
@@ -105,49 +148,6 @@
                 </div>
             </div>
         </section>
-
-        <!-- COLUMN 3: Resources & Files -->
-        <aside class="lg:col-span-1 space-y-6">
-            <div class="flex items-center gap-2 mb-4 border-b border-gray-800 pb-2">
-                <span class="text-xl">🧠</span> 
-                <h2 class="text-lg font-bold text-purple-400 uppercase tracking-wider">Intelligence & Files</h2>
-            </div>
-
-            <!-- Notebooks Widget -->
-            <div class="glass-card p-6">
-                <h3 class="text-sm font-bold text-slate-400 mb-4 uppercase tracking-widest border-b border-slate-700/50 pb-2">Notebooks</h3>
-                <div class="space-y-3">
-                    <!-- Notebook 1 -->
-                    <a href="https://notebooklm.google.com/notebook/529b5005-d623-470a-83b8-b941185fafe4" target="_blank" 
-                       class="group block p-3 rounded-xl bg-slate-800/50 border border-slate-700 hover:border-cyan-500 hover:bg-slate-800 transition-all">
-                        <div class="flex justify-between items-center mb-1">
-                            <span class="font-bold text-cyan-400 group-hover:text-white transition-colors text-sm">Anthropic's AI Approach</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-slate-500 group-hover:text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                            </svg>
-                        </div>
-                        <span class="text-[10px] text-slate-500">Constitutional AI & Safety</span>
-                    </a>
-
-                    <!-- Notebook 2 -->
-                    <a href="#" class="group block p-3 rounded-xl bg-slate-800/50 border border-slate-700 hover:border-purple-500 hover:bg-slate-800 transition-all opacity-75">
-                        <div class="flex justify-between items-center mb-1">
-                            <span class="font-bold text-purple-400 group-hover:text-white transition-colors text-sm">Gemini Architecture</span>
-                            <span class="text-[9px] bg-slate-900 text-slate-400 px-1.5 py-0.5 rounded border border-slate-700">Soon</span>
-                        </div>
-                        <span class="text-[10px] text-slate-500">Multimodal capabilities</span>
-                    </a>
-                </div>
-            </div>
-
-            <!-- New: Shared Files Widget -->
-            <div class="glass-card p-6">
-                <h3 class="text-sm font-bold text-slate-400 mb-4 uppercase tracking-widest border-b border-slate-700/50 pb-2">Shared Files</h3>
-                <ul id="file-list" class="space-y-3">
-                    <!-- Files injected via script.js -->
-                </ul>
-            </div>
-        </aside>
 
     </main>
 

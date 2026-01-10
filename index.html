@@ -143,44 +143,8 @@
             <!-- New: Shared Files Widget -->
             <div class="glass-card p-6">
                 <h3 class="text-sm font-bold text-slate-400 mb-4 uppercase tracking-widest border-b border-slate-700/50 pb-2">Shared Files</h3>
-                <ul class="space-y-3">
-                    <li class="flex items-center justify-between group cursor-pointer p-2 rounded hover:bg-white/5 transition-colors">
-                        <a href="files/The_Docling_Local_RAG_Stack.pdf" target="_blank" class="flex items-center gap-3 w-full">
-                            <div class="bg-red-500/20 p-2 rounded text-red-400">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                                </svg>
-                            </div>
-                            <div class="flex flex-col">
-                                <span class="text-sm text-gray-200 group-hover:text-white font-medium">The Docling Local RAG Stack</span>
-                                <span class="text-[10px] text-slate-500">PDF • Shared Resource</span>
-                            </div>
-                        </a>
-                        <a href="files/The_Docling_Local_RAG_Stack.pdf" download class="text-slate-600 hover:text-cyan-400">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                            </svg>
-                        </a>
-                    </li>
-
-                    <li class="flex items-center justify-between group cursor-pointer p-2 rounded hover:bg-white/5 transition-colors">
-                        <a href="files/The_Human_Side_of_AI_Adoption.pdf" target="_blank" class="flex items-center gap-3 w-full">
-                            <div class="bg-red-500/20 p-2 rounded text-red-400">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                                </svg>
-                            </div>
-                            <div class="flex flex-col">
-                                <span class="text-sm text-gray-200 group-hover:text-white font-medium">The Human Side of AI Adoption</span>
-                                <span class="text-[10px] text-slate-500">PDF • Shared Resource</span>
-                            </div>
-                        </a>
-                        <a href="files/The_Human_Side_of_AI_Adoption.pdf" download class="text-slate-600 hover:text-cyan-400">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                            </svg>
-                        </a>
-                    </li>
+                <ul id="file-list" class="space-y-3">
+                    <!-- Files injected via script.js -->
                 </ul>
             </div>
         </aside>

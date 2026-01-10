@@ -106,16 +106,47 @@ def sync_links():
     existing_urls = {l['url'] for l in existing_links}
     truly_new_links = [l for l in new_links if l['url'] not in existing_urls]
     
-    if not truly_new_links:
-        print("✨ No new links to add (all duplicates).")
-        return
-
     # Add new links to the TOP
     combined_links = truly_new_links + existing_links
     
     # 4. Generate new JS content
     new_json_str = json.dumps(combined_links, indent=2)
     new_content = content.replace(match.group(1), new_json_str)
+
+    # --- FILE SCANNING LOGIC ---
+    files_dir = "files"
+    scanned_files = []
+    if os.path.exists(files_dir):
+        print(f"📂 Scanning '{files_dir}' directory...")
+        for filename in os.listdir(files_dir):
+            if os.path.isfile(os.path.join(files_dir, filename)):
+                # Determine type/icon
+                ext = filename.split('.')[-1].lower()
+                icon = "📄"
+                if ext == "pdf": icon = "📕" # PDF specific
+                if ext in ["jpg", "png", "jpeg"]: icon = "🖼️"
+                
+                scanned_files.append({
+                    "name": filename.replace("_", " ").replace(".pdf", ""),
+                    "path": f"files/{filename}",
+                    "type": ext.upper(),
+                    "icon": icon
+                })
+    
+    # Inject Files JSON
+    files_json_str = json.dumps(scanned_files, indent=2)
+    
+    # Check if allFiles exists, if so replace, if not append
+    file_pattern = r"const allFiles = (\[.*?\]);"
+    file_match = re.search(file_pattern, new_content, re.DOTALL)
+    
+    if file_match:
+        new_content = new_content.replace(file_match.group(1), files_json_str)
+        print(f"✅ Updated file list with {len(scanned_files)} files.")
+    else:
+        # Append to top
+        new_content = f"const allFiles = {files_json_str};\n\n" + new_content
+        print(f"✅ Created file list with {len(scanned_files)} files.")
 
     # 5. Write back
     with open(JS_FILE, 'w', encoding='utf-8') as f:

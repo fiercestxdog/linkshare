@@ -1,3 +1,24 @@
+const allFiles = [
+  {
+    "name": "The AI Arms Race Escalates",
+    "path": "files/The_AI_Arms_Race_Escalates.pdf",
+    "type": "PDF",
+    "icon": "\ud83d\udcd5"
+  },
+  {
+    "name": "The Docling Local RAG Stack",
+    "path": "files/The_Docling_Local_RAG_Stack.pdf",
+    "type": "PDF",
+    "icon": "\ud83d\udcd5"
+  },
+  {
+    "name": "The Human Side of AI Adoption",
+    "path": "files/The_Human_Side_of_AI_Adoption.pdf",
+    "type": "PDF",
+    "icon": "\ud83d\udcd5"
+  }
+];
+
 const allLinks = [
   {
     "title": "Claude Code is awesome!",
@@ -37,6 +58,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initial render
     renderLinks(allLinks);
+    if (typeof allFiles !== 'undefined') {
+        renderFiles(allFiles);
+    }
 
     // Render Function
     function renderLinks(links) {
@@ -58,11 +82,41 @@ document.addEventListener('DOMContentLoaded', () => {
                     <a href="${link.url}" target="_blank" class="hover:underline">${link.title}</a>
                 </h3>
                 <p class="text-slate-300 text-sm mb-4 flex-grow">${link.description}</p>
-                <div class="flex flex-wrap gap-2 mt-auto">
-                    ${link.tags.map(tag => `<span class="tag-badge text-xs px-2 py-1 rounded-full">${tag}</span>`).join('')}
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mt-auto gap-2">
+                    <div class="flex flex-wrap gap-2">
+                        ${link.tags.map(tag => `<span class="tag-badge text-xs px-2 py-1 rounded-full">${tag}</span>`).join('')}
+                    </div>
                 </div>
             `;
             grid.appendChild(card);
+        });
+    }
+
+    function renderFiles(files) {
+        const fileList = document.getElementById('file-list');
+        if (!fileList) return;
+        
+        fileList.innerHTML = '';
+        files.forEach(file => {
+            const li = document.createElement('li');
+            li.className = "flex items-center justify-between group cursor-pointer p-2 rounded hover:bg-white/5 transition-colors";
+            li.innerHTML = `
+                <a href="${file.path}" target="_blank" class="flex items-center gap-3 w-full">
+                    <div class="bg-red-500/20 p-2 rounded text-red-400 text-xl">
+                        ${file.icon}
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-sm text-gray-200 group-hover:text-white font-medium">${file.name}</span>
+                        <span class="text-[10px] text-slate-500">${file.type} • Shared Resource</span>
+                    </div>
+                </a>
+                <a href="${file.path}" download class="text-slate-600 hover:text-cyan-400 px-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                    </svg>
+                </a>
+            `;
+            fileList.appendChild(li);
         });
     }
 

@@ -1,10 +1,23 @@
 const allLinks = [
   {
+    "title": "Model Collapse",
+    "url": "https://sderosiaux.substack.com/p/internet-is-eating-itself-whats-next",
+    "description": "AI generated content is taking over the internet",
+    "tags": [
+      "Latest AI News/Breakthroughs"
+    ],
+    "icon": "\ud83c\udd95"
+  },
+  {
     "title": "Claude Code Workflow Reveal",
     "url": "https://venturebeat.com/technology/the-creator-of-claude-code-just-revealed-his-workflow-and-developers-are",
     "description": "Insights from the creator of Claude Code on high-efficiency developer workflows.",
-    "tags": ["AI", "Dev", "Claude"],
-    "icon": "🤖"
+    "tags": [
+      "AI",
+      "Dev",
+      "Claude"
+    ],
+    "icon": "\ud83e\udd16"
   }
 ];
 

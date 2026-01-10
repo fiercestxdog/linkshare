@@ -1,5 +1,15 @@
 const allLinks = [
   {
+    "title": "Claude Code is awesome!",
+    "url": "https://www.lennysnewsletter.com/p/everyone-should-be-using-claude-code",
+    "description": "Everyone should check out Claude Code",
+    "tags": [
+      "Handy Tips & Tricks (Tutorials",
+      "guides)"
+    ],
+    "icon": "\ud83c\udd95"
+  },
+  {
     "title": "Model Collapse",
     "url": "https://sderosiaux.substack.com/p/internet-is-eating-itself-whats-next",
     "description": "AI generated content is taking over the internet",

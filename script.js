@@ -1,5 +1,11 @@
 const allFiles = [
   {
+    "name": "Signal Noise Mastery",
+    "path": "files/Signal_Noise_Mastery.pdf",
+    "type": "PDF",
+    "icon": "\ud83d\udcd5"
+  },
+  {
     "name": "The AI Arms Race Escalates",
     "path": "files/The_AI_Arms_Race_Escalates.pdf",
     "type": "PDF",
@@ -14,6 +20,12 @@ const allFiles = [
   {
     "name": "The Human Side of AI Adoption",
     "path": "files/The_Human_Side_of_AI_Adoption.pdf",
+    "type": "PDF",
+    "icon": "\ud83d\udcd5"
+  },
+  {
+    "name": "The Rise of Autonomous Systems",
+    "path": "files/The_Rise_of_Autonomous_Systems.pdf",
     "type": "PDF",
     "icon": "\ud83d\udcd5"
   }

@@ -1,5 +1,11 @@
 const allFiles = [
   {
+    "name": "Federal AI Landscape 2025",
+    "path": "files/Federal_AI_Landscape_2025.pdf",
+    "type": "PDF",
+    "icon": "\ud83d\udcd5"
+  },
+  {
     "name": "Signal Noise Mastery",
     "path": "files/Signal_Noise_Mastery.pdf",
     "type": "PDF",

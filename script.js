@@ -3,6 +3,21 @@ const CATEGORIES = ["All", "AI", "Software", "Management", "Health & Fitness"];
 
 const allFiles = [
   {
+    "name": "Engineering Peak Running Performance",
+    "path": "files/Engineering_Peak_Running_Performance.pdf",
+    "type": "PDF",
+    "icon": "📕",
+    "categories": ["Health & Fitness"]
+  },
+  {
+    "name": "Poetry And Plumbing",
+    "path": "files/Poetry_and_Plumbing.pdf",
+    "type": "PDF",
+    "icon": "📕",
+    "categories": ["Management"]
+  },
+
+  {
     "name": "Federal AI Landscape 2025",
     "path": "files/Federal_AI_Landscape_2025.pdf",
     "type": "PDF",

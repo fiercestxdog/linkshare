@@ -138,15 +138,41 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Search Filtering
+    // Search Filtering - filters ALL sections
     searchInput.addEventListener('input', (e) => {
         const term = e.target.value.toLowerCase();
-        const filtered = allLinks.filter(link => 
-            link.title.toLowerCase().includes(term) || 
+
+        // Filter Links
+        const filteredLinks = allLinks.filter(link =>
+            link.title.toLowerCase().includes(term) ||
             link.description.toLowerCase().includes(term) ||
             link.tags.some(tag => tag.toLowerCase().includes(term))
         );
-        renderLinks(filtered);
+        renderLinks(filteredLinks);
+
+        // Filter Files
+        const filteredFiles = allFiles.filter(file =>
+            file.name.toLowerCase().includes(term) ||
+            file.type.toLowerCase().includes(term)
+        );
+        renderFiles(filteredFiles);
+
+        // Filter Podcasts
+        const podcastItems = document.querySelectorAll('.podcast-item');
+        podcastItems.forEach(item => {
+            const title = (item.dataset.title || '').toLowerCase();
+            const tags = (item.dataset.tags || '').toLowerCase();
+            const matches = title.includes(term) || tags.includes(term);
+            item.style.display = matches ? 'block' : 'none';
+        });
+
+        // Filter Notebooks
+        const notebookItems = document.querySelectorAll('.glass-card .group[href]');
+        notebookItems.forEach(item => {
+            const text = item.textContent.toLowerCase();
+            const matches = text.includes(term);
+            item.style.display = matches ? 'block' : 'none';
+        });
     });
 });
 

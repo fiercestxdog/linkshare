@@ -23,14 +23,23 @@
         <div class="flex flex-col sm:flex-row justify-center gap-4 items-center">
             <input type="text" id="search-input" placeholder="Search links, files, podcasts..."
                 class="search-input px-6 py-3 rounded-full w-full sm:w-96">
-            
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdBURZDdQEDA-9RMTPv3NzrtSOGxSByCj4mj8a8lqZ0L3ELcQ/viewform?usp=header" target="_blank" 
+
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdBURZDdQEDA-9RMTPv3NzrtSOGxSByCj4mj8a8lqZ0L3ELcQ/viewform?usp=header" target="_blank"
                class="neon-button px-8 py-3 rounded-full font-semibold uppercase tracking-wider text-sm flex items-center gap-2">
                 <span>Submit Link</span>
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
                 </svg>
             </a>
+        </div>
+
+        <!-- Category Filter -->
+        <div id="category-filter" class="flex flex-wrap justify-center gap-2 mt-6">
+            <button class="category-btn active px-4 py-2 rounded-full text-sm font-medium transition-all" data-category="All">All</button>
+            <button class="category-btn px-4 py-2 rounded-full text-sm font-medium transition-all" data-category="AI">AI</button>
+            <button class="category-btn px-4 py-2 rounded-full text-sm font-medium transition-all" data-category="Software">Software</button>
+            <button class="category-btn px-4 py-2 rounded-full text-sm font-medium transition-all" data-category="Management">Management</button>
+            <button class="category-btn px-4 py-2 rounded-full text-sm font-medium transition-all" data-category="Health & Fitness">Health & Fitness</button>
         </div>
     </header>
 
@@ -62,8 +71,9 @@
                 <h3 class="text-sm font-bold text-slate-400 mb-4 uppercase tracking-widest border-b border-slate-700/50 pb-2">Notebooks</h3>
                 <div class="space-y-3">
                     <!-- Notebook 1 -->
-                    <a href="https://notebooklm.google.com/notebook/529b5005-d623-470a-83b8-b941185fafe4" target="_blank" 
-                       class="group block p-3 rounded-xl bg-slate-800/50 border border-slate-700 hover:border-cyan-500 hover:bg-slate-800 transition-all">
+                    <a href="https://notebooklm.google.com/notebook/529b5005-d623-470a-83b8-b941185fafe4" target="_blank"
+                       class="notebook-item group block p-3 rounded-xl bg-slate-800/50 border border-slate-700 hover:border-cyan-500 hover:bg-slate-800 transition-all"
+                       data-category="AI" data-title="Anthropic AI Approach Constitutional Safety">
                         <div class="flex justify-between items-center mb-1">
                             <span class="font-bold text-cyan-400 group-hover:text-white transition-colors text-sm">Anthropic's AI Approach</span>
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-slate-500 group-hover:text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -75,7 +85,8 @@
 
                     <!-- Notebook 2 -->
                     <a href="https://notebooklm.google.com/notebook/09f487d9-5db5-47f9-8394-050ff654fe56" target="_blank"
-                       class="group block p-3 rounded-xl bg-slate-800/50 border border-slate-700 hover:border-purple-500 hover:bg-slate-800 transition-all">
+                       class="notebook-item group block p-3 rounded-xl bg-slate-800/50 border border-slate-700 hover:border-purple-500 hover:bg-slate-800 transition-all"
+                       data-category="Management" data-title="Balancing Vision Reality Strategic Planning">
                         <div class="flex justify-between items-center mb-1">
                             <span class="font-bold text-purple-400 group-hover:text-white transition-colors text-sm">Balancing Vision with Reality</span>
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-slate-500 group-hover:text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -106,7 +117,7 @@
 
             <div id="podcast-list" class="space-y-4">
                 <!-- Podcast 1 -->
-                <div class="podcast-item glass-card p-4" data-title="Autonomous AI Agents" data-tags="ai agents planning autonomous">
+                <div class="podcast-item glass-card p-4" data-title="Autonomous AI Agents" data-tags="ai agents planning autonomous" data-category="AI">
                     <div class="flex items-center gap-3 mb-3">
                         <span class="text-3xl">🤖</span>
                         <div class="flex-1">
@@ -120,7 +131,7 @@
                 </div>
 
                 <!-- Podcast 2 -->
-                <div class="podcast-item glass-card p-4" data-title="Jobs Musk OLeary Focus on Signal" data-tags="jobs musk oleary signal focus leadership">
+                <div class="podcast-item glass-card p-4" data-title="Jobs Musk OLeary Focus on Signal" data-tags="jobs musk oleary signal focus leadership" data-category="Management">
                     <div class="flex items-center gap-3 mb-3">
                         <span class="text-3xl">📡</span>
                         <div class="flex-1">
@@ -134,7 +145,7 @@
                 </div>
 
                 <!-- Podcast 3 -->
-                <div class="podcast-item glass-card p-4" data-title="Prompting Boosts Reasoning but Reveals Bias" data-tags="prompting reasoning bias llm">
+                <div class="podcast-item glass-card p-4" data-title="Prompting Boosts Reasoning but Reveals Bias" data-tags="prompting reasoning bias llm" data-category="AI">
                     <div class="flex items-center gap-3 mb-3">
                         <span class="text-3xl">🧠</span>
                         <div class="flex-1">

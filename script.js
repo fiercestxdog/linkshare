@@ -1,39 +1,48 @@
+// Categories: AI, Software, Management, Health & Fitness
+const CATEGORIES = ["All", "AI", "Software", "Management", "Health & Fitness"];
+
 const allFiles = [
   {
     "name": "Federal AI Landscape 2025",
     "path": "files/Federal_AI_Landscape_2025.pdf",
     "type": "PDF",
-    "icon": "\ud83d\udcd5"
+    "icon": "\ud83d\udcd5",
+    "categories": ["AI"]
   },
   {
     "name": "Signal Noise Mastery",
     "path": "files/Signal_Noise_Mastery.pdf",
     "type": "PDF",
-    "icon": "\ud83d\udcd5"
+    "icon": "\ud83d\udcd5",
+    "categories": ["Management"]
   },
   {
     "name": "The AI Arms Race Escalates",
     "path": "files/The_AI_Arms_Race_Escalates.pdf",
     "type": "PDF",
-    "icon": "\ud83d\udcd5"
+    "icon": "\ud83d\udcd5",
+    "categories": ["AI"]
   },
   {
     "name": "The Docling Local RAG Stack",
     "path": "files/The_Docling_Local_RAG_Stack.pdf",
     "type": "PDF",
-    "icon": "\ud83d\udcd5"
+    "icon": "\ud83d\udcd5",
+    "categories": ["Software"]
   },
   {
     "name": "The Human Side of AI Adoption",
     "path": "files/The_Human_Side_of_AI_Adoption.pdf",
     "type": "PDF",
-    "icon": "\ud83d\udcd5"
+    "icon": "\ud83d\udcd5",
+    "categories": ["AI", "Management"]
   },
   {
     "name": "The Rise of Autonomous Systems",
     "path": "files/The_Rise_of_Autonomous_Systems.pdf",
     "type": "PDF",
-    "icon": "\ud83d\udcd5"
+    "icon": "\ud83d\udcd5",
+    "categories": ["AI"]
   }
 ];
 
@@ -42,42 +51,99 @@ const allLinks = [
     "title": "Claude Code is awesome!",
     "url": "https://www.lennysnewsletter.com/p/everyone-should-be-using-claude-code",
     "description": "Everyone should check out Claude Code",
-    "tags": [
-      "Handy Tips & Tricks (Tutorials",
-      "guides)"
-    ],
-    "icon": "\ud83c\udd95"
+    "tags": ["Tutorial", "Claude"],
+    "icon": "\ud83c\udd95",
+    "categories": ["AI", "Software"]
   },
   {
     "title": "Model Collapse",
     "url": "https://sderosiaux.substack.com/p/internet-is-eating-itself-whats-next",
     "description": "AI generated content is taking over the internet",
-    "tags": [
-      "Latest AI News/Breakthroughs"
-    ],
-    "icon": "\ud83c\udd95"
+    "tags": ["AI News"],
+    "icon": "\ud83c\udd95",
+    "categories": ["AI"]
   },
   {
     "title": "Claude Code Workflow Reveal",
     "url": "https://venturebeat.com/technology/the-creator-of-claude-code-just-revealed-his-workflow-and-developers-are",
     "description": "Insights from the creator of Claude Code on high-efficiency developer workflows.",
-    "tags": [
-      "AI",
-      "Dev",
-      "Claude"
-    ],
-    "icon": "\ud83e\udd16"
+    "tags": ["Dev", "Claude"],
+    "icon": "\ud83e\udd16",
+    "categories": ["AI", "Software"]
   }
 ];
 
 document.addEventListener('DOMContentLoaded', () => {
     const grid = document.getElementById('link-grid');
     const searchInput = document.getElementById('search-input');
+    const categoryFilter = document.getElementById('category-filter');
+
+    let activeCategory = 'All';
 
     // Initial render
     renderLinks(allLinks);
     if (typeof allFiles !== 'undefined') {
         renderFiles(allFiles);
+    }
+
+    // Category Filter Click Handler
+    categoryFilter.addEventListener('click', (e) => {
+        const btn = e.target.closest('.category-btn');
+        if (!btn) return;
+
+        // Update active state
+        categoryFilter.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        activeCategory = btn.dataset.category;
+        applyFilters();
+    });
+
+    // Combined filter function
+    function applyFilters() {
+        const term = searchInput.value.toLowerCase();
+
+        // Filter Links
+        const filteredLinks = allLinks.filter(link => {
+            const matchesSearch = link.title.toLowerCase().includes(term) ||
+                link.description.toLowerCase().includes(term) ||
+                link.tags.some(tag => tag.toLowerCase().includes(term));
+            const matchesCategory = activeCategory === 'All' ||
+                (link.categories && link.categories.includes(activeCategory));
+            return matchesSearch && matchesCategory;
+        });
+        renderLinks(filteredLinks);
+
+        // Filter Files
+        const filteredFiles = allFiles.filter(file => {
+            const matchesSearch = file.name.toLowerCase().includes(term) ||
+                file.type.toLowerCase().includes(term);
+            const matchesCategory = activeCategory === 'All' ||
+                (file.categories && file.categories.includes(activeCategory));
+            return matchesSearch && matchesCategory;
+        });
+        renderFiles(filteredFiles);
+
+        // Filter Podcasts
+        const podcastItems = document.querySelectorAll('.podcast-item');
+        podcastItems.forEach(item => {
+            const title = (item.dataset.title || '').toLowerCase();
+            const tags = (item.dataset.tags || '').toLowerCase();
+            const category = item.dataset.category || '';
+            const matchesSearch = title.includes(term) || tags.includes(term);
+            const matchesCategory = activeCategory === 'All' || category === activeCategory;
+            item.style.display = (matchesSearch && matchesCategory) ? 'block' : 'none';
+        });
+
+        // Filter Notebooks
+        const notebookItems = document.querySelectorAll('.notebook-item');
+        notebookItems.forEach(item => {
+            const text = (item.dataset.title || item.textContent).toLowerCase();
+            const category = item.dataset.category || '';
+            const matchesSearch = text.includes(term);
+            const matchesCategory = activeCategory === 'All' || category === activeCategory;
+            item.style.display = (matchesSearch && matchesCategory) ? 'block' : 'none';
+        });
     }
 
     // Render Function
@@ -138,41 +204,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Search Filtering - filters ALL sections
-    searchInput.addEventListener('input', (e) => {
-        const term = e.target.value.toLowerCase();
-
-        // Filter Links
-        const filteredLinks = allLinks.filter(link =>
-            link.title.toLowerCase().includes(term) ||
-            link.description.toLowerCase().includes(term) ||
-            link.tags.some(tag => tag.toLowerCase().includes(term))
-        );
-        renderLinks(filteredLinks);
-
-        // Filter Files
-        const filteredFiles = allFiles.filter(file =>
-            file.name.toLowerCase().includes(term) ||
-            file.type.toLowerCase().includes(term)
-        );
-        renderFiles(filteredFiles);
-
-        // Filter Podcasts
-        const podcastItems = document.querySelectorAll('.podcast-item');
-        podcastItems.forEach(item => {
-            const title = (item.dataset.title || '').toLowerCase();
-            const tags = (item.dataset.tags || '').toLowerCase();
-            const matches = title.includes(term) || tags.includes(term);
-            item.style.display = matches ? 'block' : 'none';
-        });
-
-        // Filter Notebooks
-        const notebookItems = document.querySelectorAll('.glass-card .group[href]');
-        notebookItems.forEach(item => {
-            const text = item.textContent.toLowerCase();
-            const matches = text.includes(term);
-            item.style.display = matches ? 'block' : 'none';
-        });
+    // Search Filtering - uses combined filter function
+    searchInput.addEventListener('input', () => {
+        applyFilters();
     });
 });
 

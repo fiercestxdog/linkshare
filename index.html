@@ -45,70 +45,8 @@
 
     <!-- Main Content Grid (3 Columns) -->
     <main class="container mx-auto px-4 pb-20 grid grid-cols-1 lg:grid-cols-3 gap-6">
-        
-        <!-- COLUMN 1: Links -->
-        <section class="lg:col-span-1 space-y-6">
-            <div class="flex items-center gap-2 mb-4 border-b border-gray-800 pb-2">
-                <span class="text-xl">⚡</span> 
-                <h2 class="text-lg font-bold text-cyan-400 uppercase tracking-wider">Latest Links</h2>
-            </div>
-            
-            <!-- Link List (Single Column) -->
-            <div id="link-grid" class="flex flex-col gap-4">
-                <!-- Cards injected via script.js -->
-            </div>
-        </section>
 
-        <!-- COLUMN 2: Resources & Files -->
-        <aside class="lg:col-span-1 space-y-6">
-            <div class="flex items-center gap-2 mb-4 border-b border-gray-800 pb-2">
-                <span class="text-xl">🧠</span> 
-                <h2 class="text-lg font-bold text-purple-400 uppercase tracking-wider">Intelligence & Files</h2>
-            </div>
-
-            <!-- Notebooks Widget -->
-            <div class="glass-card p-6">
-                <h3 class="text-sm font-bold text-slate-400 mb-4 uppercase tracking-widest border-b border-slate-700/50 pb-2">Notebooks</h3>
-                <div class="space-y-3">
-                    <!-- Notebook 1 -->
-                    <a href="https://notebooklm.google.com/notebook/529b5005-d623-470a-83b8-b941185fafe4" target="_blank"
-                       class="notebook-item group block p-3 rounded-xl bg-slate-800/50 border border-slate-700 hover:border-cyan-500 hover:bg-slate-800 transition-all"
-                       data-category="AI" data-title="Anthropic AI Approach Constitutional Safety">
-                        <div class="flex justify-between items-center mb-1">
-                            <span class="font-bold text-cyan-400 group-hover:text-white transition-colors text-sm">Anthropic's AI Approach</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-slate-500 group-hover:text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                            </svg>
-                        </div>
-                        <span class="text-[10px] text-slate-500">Constitutional AI & Safety</span>
-                    </a>
-
-                    <!-- Notebook 2 -->
-                    <a href="https://notebooklm.google.com/notebook/09f487d9-5db5-47f9-8394-050ff654fe56" target="_blank"
-                       class="notebook-item group block p-3 rounded-xl bg-slate-800/50 border border-slate-700 hover:border-purple-500 hover:bg-slate-800 transition-all"
-                       data-category="Management" data-title="Balancing Vision Reality Strategic Planning">
-                        <div class="flex justify-between items-center mb-1">
-                            <span class="font-bold text-purple-400 group-hover:text-white transition-colors text-sm">Balancing Vision with Reality</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-slate-500 group-hover:text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                            </svg>
-                        </div>
-                        <span class="text-[10px] text-slate-500">Strategic planning & execution</span>
-                    </a>
-                </div>
-            </div>
-
-            <!-- New: Shared Files Widget -->
-            <div class="glass-card p-6">
-                <h3 class="text-sm font-bold text-slate-400 mb-4 uppercase tracking-widest border-b border-slate-700/50 pb-2">Shared Files</h3>
-                <ul id="file-list" class="space-y-3">
-                    <!-- Files injected via script.js -->
-                </ul>
-            </div>
-
-        </aside>
-
-        <!-- COLUMN 3: Podcasts -->
+        <!-- COLUMN 1: Podcasts -->
         <section class="lg:col-span-1 space-y-6">
             <div class="flex items-center gap-2 mb-4 border-b border-gray-800 pb-2">
                 <span class="text-xl">🎙️</span>
@@ -187,6 +125,68 @@
                 </div>
             </div>
         </section>
+
+        <!-- COLUMN 2: Links -->
+        <section class="lg:col-span-1 space-y-6">
+            <div class="flex items-center gap-2 mb-4 border-b border-gray-800 pb-2">
+                <span class="text-xl">⚡</span>
+                <h2 class="text-lg font-bold text-cyan-400 uppercase tracking-wider">Latest Links</h2>
+            </div>
+
+            <!-- Link List (Single Column) -->
+            <div id="link-grid" class="flex flex-col gap-4">
+                <!-- Cards injected via script.js -->
+            </div>
+        </section>
+
+        <!-- COLUMN 3: Files & Notebooks -->
+        <aside class="lg:col-span-1 space-y-6">
+            <div class="flex items-center gap-2 mb-4 border-b border-gray-800 pb-2">
+                <span class="text-xl">🧠</span>
+                <h2 class="text-lg font-bold text-purple-400 uppercase tracking-wider">Files & Notebooks</h2>
+            </div>
+
+            <!-- Shared Files Widget -->
+            <div class="glass-card p-6">
+                <h3 class="text-sm font-bold text-slate-400 mb-4 uppercase tracking-widest border-b border-slate-700/50 pb-2">Shared Files</h3>
+                <ul id="file-list" class="space-y-3">
+                    <!-- Files injected via script.js -->
+                </ul>
+            </div>
+
+            <!-- Notebooks Widget -->
+            <div class="glass-card p-6">
+                <h3 class="text-sm font-bold text-slate-400 mb-4 uppercase tracking-widest border-b border-slate-700/50 pb-2">Notebooks</h3>
+                <div class="space-y-3">
+                    <!-- Notebook 1 -->
+                    <a href="https://notebooklm.google.com/notebook/529b5005-d623-470a-83b8-b941185fafe4" target="_blank"
+                       class="notebook-item group block p-3 rounded-xl bg-slate-800/50 border border-slate-700 hover:border-cyan-500 hover:bg-slate-800 transition-all"
+                       data-category="AI" data-title="Anthropic AI Approach Constitutional Safety">
+                        <div class="flex justify-between items-center mb-1">
+                            <span class="font-bold text-cyan-400 group-hover:text-white transition-colors text-sm">Anthropic's AI Approach</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-slate-500 group-hover:text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                            </svg>
+                        </div>
+                        <span class="text-[10px] text-slate-500">Constitutional AI & Safety</span>
+                    </a>
+
+                    <!-- Notebook 2 -->
+                    <a href="https://notebooklm.google.com/notebook/09f487d9-5db5-47f9-8394-050ff654fe56" target="_blank"
+                       class="notebook-item group block p-3 rounded-xl bg-slate-800/50 border border-slate-700 hover:border-purple-500 hover:bg-slate-800 transition-all"
+                       data-category="Management" data-title="Balancing Vision Reality Strategic Planning">
+                        <div class="flex justify-between items-center mb-1">
+                            <span class="font-bold text-purple-400 group-hover:text-white transition-colors text-sm">Balancing Vision with Reality</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-slate-500 group-hover:text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                            </svg>
+                        </div>
+                        <span class="text-[10px] text-slate-500">Strategic planning & execution</span>
+                    </a>
+                </div>
+            </div>
+
+        </aside>
 
     </main>
 

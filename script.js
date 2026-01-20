@@ -63,6 +63,15 @@ const allFiles = [
 
 const allLinks = [
   {
+    "title": "I built an OS by vibing with Claude (reddit.com)",
+    "url": "https://old.reddit.com/r/vibecoding/comments/1qf46sc/i_built_an_entire_os_by_vibing_with_claude/",
+    "description": "Just pushed Vib-OS - a complete operating system I coded entirely through conversational prompting with Claude. What is it? A functional...",
+    "tags": ["Claude", "HN"],
+    "icon": "\ud83c\udd95",
+    "categories": ["Claude"]
+  },
+
+  {
     "title": "Claude Code is awesome!",
     "url": "https://www.lennysnewsletter.com/p/everyone-should-be-using-claude-code",
     "description": "Everyone should check out Claude Code",

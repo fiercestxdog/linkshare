@@ -15,6 +15,12 @@ const allFiles = [
     "icon": "\ud83d\udcd5"
   },
   {
+    "name": "Planner Data Extraction Deep Dive",
+    "path": "files/Planner_Data_Extraction_Deep_Dive.pdf",
+    "type": "PDF",
+    "icon": "\ud83d\udcd5"
+  },
+  {
     "name": "Poetry and Plumbing",
     "path": "files/Poetry_and_Plumbing.pdf",
     "type": "PDF",

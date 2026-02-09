@@ -6,58 +6,49 @@ const allFiles = [
     "name": "Engineering Peak Running Performance",
     "path": "files/Engineering_Peak_Running_Performance.pdf",
     "type": "PDF",
-    "icon": "📕",
-    "categories": ["Health & Fitness"]
+    "icon": "\ud83d\udcd5"
   },
-  {
-    "name": "Poetry And Plumbing",
-    "path": "files/Poetry_and_Plumbing.pdf",
-    "type": "PDF",
-    "icon": "📕",
-    "categories": ["Management"]
-  },
-
   {
     "name": "Federal AI Landscape 2025",
     "path": "files/Federal_AI_Landscape_2025.pdf",
     "type": "PDF",
-    "icon": "\ud83d\udcd5",
-    "categories": ["AI"]
+    "icon": "\ud83d\udcd5"
+  },
+  {
+    "name": "Poetry and Plumbing",
+    "path": "files/Poetry_and_Plumbing.pdf",
+    "type": "PDF",
+    "icon": "\ud83d\udcd5"
   },
   {
     "name": "Signal Noise Mastery",
     "path": "files/Signal_Noise_Mastery.pdf",
     "type": "PDF",
-    "icon": "\ud83d\udcd5",
-    "categories": ["Management"]
+    "icon": "\ud83d\udcd5"
   },
   {
     "name": "The AI Arms Race Escalates",
     "path": "files/The_AI_Arms_Race_Escalates.pdf",
     "type": "PDF",
-    "icon": "\ud83d\udcd5",
-    "categories": ["AI"]
+    "icon": "\ud83d\udcd5"
   },
   {
     "name": "The Docling Local RAG Stack",
     "path": "files/The_Docling_Local_RAG_Stack.pdf",
     "type": "PDF",
-    "icon": "\ud83d\udcd5",
-    "categories": ["Software"]
+    "icon": "\ud83d\udcd5"
   },
   {
     "name": "The Human Side of AI Adoption",
     "path": "files/The_Human_Side_of_AI_Adoption.pdf",
     "type": "PDF",
-    "icon": "\ud83d\udcd5",
-    "categories": ["AI", "Management"]
+    "icon": "\ud83d\udcd5"
   },
   {
     "name": "The Rise of Autonomous Systems",
     "path": "files/The_Rise_of_Autonomous_Systems.pdf",
     "type": "PDF",
-    "icon": "\ud83d\udcd5",
-    "categories": ["AI"]
+    "icon": "\ud83d\udcd5"
   }
 ];
 
@@ -66,34 +57,54 @@ const allLinks = [
     "title": "I built an OS by vibing with Claude (reddit.com)",
     "url": "https://old.reddit.com/r/vibecoding/comments/1qf46sc/i_built_an_entire_os_by_vibing_with_claude/",
     "description": "Just pushed Vib-OS - a complete operating system I coded entirely through conversational prompting with Claude. What is it? A functional...",
-    "tags": ["Claude", "HN"],
+    "tags": [
+      "Claude",
+      "HN"
+    ],
     "icon": "\ud83c\udd95",
-    "categories": ["Claude"]
+    "categories": [
+      "Claude"
+    ]
   },
-
   {
     "title": "Claude Code is awesome!",
     "url": "https://www.lennysnewsletter.com/p/everyone-should-be-using-claude-code",
     "description": "Everyone should check out Claude Code",
-    "tags": ["Tutorial", "Claude"],
+    "tags": [
+      "Tutorial",
+      "Claude"
+    ],
     "icon": "\ud83c\udd95",
-    "categories": ["AI", "Software"]
+    "categories": [
+      "AI",
+      "Software"
+    ]
   },
   {
     "title": "Model Collapse",
     "url": "https://sderosiaux.substack.com/p/internet-is-eating-itself-whats-next",
     "description": "AI generated content is taking over the internet",
-    "tags": ["AI News"],
+    "tags": [
+      "AI News"
+    ],
     "icon": "\ud83c\udd95",
-    "categories": ["AI"]
+    "categories": [
+      "AI"
+    ]
   },
   {
     "title": "Claude Code Workflow Reveal",
     "url": "https://venturebeat.com/technology/the-creator-of-claude-code-just-revealed-his-workflow-and-developers-are",
     "description": "Insights from the creator of Claude Code on high-efficiency developer workflows.",
-    "tags": ["Dev", "Claude"],
+    "tags": [
+      "Dev",
+      "Claude"
+    ],
     "icon": "\ud83e\udd16",
-    "categories": ["AI", "Software"]
+    "categories": [
+      "AI",
+      "Software"
+    ]
   }
 ];
 
